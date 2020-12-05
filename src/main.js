@@ -1,10 +1,3 @@
-function onPlay(id){
-    console.log(id)
-}
-function onInfo(id){
-    console.log(id)
-}
-
 function mouseLeave(input){
     document.getElementById("modal-card").removeChild(input)
 }

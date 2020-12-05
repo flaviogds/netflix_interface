@@ -124,7 +124,7 @@ body, html {
     align-items: center;
 }
 .search input{
-    display: flex;
+    display: none;
     margin: 0 10px 0 0;
     background: var(--black-palette);
     border: 1px solid #ffffff;
