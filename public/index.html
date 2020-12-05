@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    
+    <title>Netflix Clone</title>
+
+    <script src="https://kit.fontawesome.com/26628ec3e8.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../src/Components/owl/owl.carousel.min.css">
+    <link rel="stylesheet" href="../src/Components/owl/owl.theme.default.min.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header id="navbar" class="header">
+        <h2 class="navbar-logo">NETFLIX</h2>
+        <nav class="navbar">
+            <div class="dropdown navbar-item">
+                <button class="dropdown-button">
+                    Navegar
+                    <i class="fas fa-sort-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="index.html">Iniciar</a>
+                    <a href="">Séries</a>
+                    <a href="">Filmes</a>
+                    <a href="">Documentários</a>
+                    <a href="">Minha Lista</a>
+                </div>
+            </div>
+            <div class="navbar-item">
+                <div class="search" action="">
+                    <button id="search-button" class="navbar-item">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input id="search" type="search">
+                </div>
+                <a href="">
+                    <img src="../src/Components/images/gift-outline.svg" alt="" class="icon">
+                </svg>
+                </a>
+                <div class="dropdown">
+                    <button class="dropdown-menu">
+                        <img src="../src/Components/images/notifications.svg" alt="" class="icon">
+                    </button>
+                    <div class="dropdown-list">
+                        <a href="">Filme 1</a>
+                        <a href="">Serie 1</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="user-button dropdown-menu">
+                        <img src="../models/Holbes.jpg" alt="" class="avatar">
+                        <i class="fas fa-sort-down"></i>
+                    </button>
+                    <div class="dropdown-list">
+                        <a href="">
+                            <img src="../models/Holbes.jpg" alt="" class="avatar">
+                            <span>User</span>
+                        </a>
+                        <div class="line"></div>
+                        <a href="" class="links">Conta</a>
+                        <a href="" class="links">Centro de Ajuda</a>
+                        <a href="" class="links">Sair do Netflix</a>
+                    </div>
+                </div>
+            </div>            
+        </nav>
+    </header>
+    
+    <main>
+        <div id="featured-banner" class="banner-wrapper">
+            <div  class="banner">
+                <h3 id="featured-title" class="title-showcase"></h3>
+                <p id="featured-description" class="description"></p>
+                <div id="featured-control" class="control-buttons">
+                    <button id="play" class="play-button" role="button">
+                        <i class='fas fa-play'></i>
+                        Assistir
+                    </button>
+                    <button id="info" class="info-button" role="button">
+                        <i class="fas fa-info-circle"></i>
+                        Mais Informações
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper" id="content">
+            <div id="modal-card"></div>
+            <img src="../models/sm-banner.jpg" alt="easteregg" style="margin: auto auto; display: none;">
+        </div>
+
+    </main>
+    <footer class="footer">
+        <div class="footer-header">
+            <a href=""><img src="../src/Components/images/logo-facebook.svg" alt="" class="social-logo"></a>
+            <a href=""><img src="../src/Components/images/logo-instagram.svg" alt="" class="social-logo"></a>
+            <a href=""><img src="../src/Components/images/logo-twitter.svg" alt="" class="social-logo"></a>
+            <a href=""><img src="../src/Components/images/logo-youtube.svg" alt="" class="social-logo"></a>
+        </div>
+        <ul class="column">
+            <li><a href="">Idioma e legendas</a></li>
+            <li><a href="">Audiodescrição</a></li>
+            <li><a href="">Centro de ajuda</a></li>
+            <li><a href="">Cartão pré-pago</a></li>
+            <li><a href="">Impresa</a></li>
+            <li><a href="">Relações com investidores</a></li>
+            <li><a href="">Carreiras</a></li>
+            <li><a href="">Termos de uso</a></li>
+            <li><a href="">Privacidade</a></li>
+            <li><a href="">Avisos legais</a></li>
+            <li><a href="">Preferências de cokies</a></li>
+            <li><a href="">Informações corporativas</a></li>
+            <li><a href="">Entre em contato</a></li>   
+        </ul>
+        <button class="service-code">Código do serviço</button>
+        <div class="copyright">Netflix</div>
+    </footer>
+    
+    <script rel="text/javascript" src="../src/Components/owl/jquery.min.js"></script>
+    <script rel="text/javascript" src="../src/Components/owl/owl.carousel.min.js"></script>
+    <script rel="text/javascript" src="../src/Components/Navbar/mavbar.js"></script>
+    <script rel="text/javascript" src="../src/Components/Navbar/mavbar.js"></script>
+    <script rel="text/javascript" src="../src/main.js"></script>
+    <script rel="text/javascript" type="module" src="../src/Components/Service/services.js"></script>
+    
+</body>
+</html>
