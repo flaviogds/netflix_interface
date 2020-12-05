@@ -1,4 +1,4 @@
-# NETIFLIX Clone
+# NETFLIX Clone
 
 
 ## `Projeto desenvolvido no Bootcamp Avanade Fullstack da Digital Innovation One`
