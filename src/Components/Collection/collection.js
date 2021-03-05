@@ -1,11 +1,12 @@
 /*Creating and attaching collection to the DOM*/
-export default function appendCollection(data, nameCollection) {
+export function appendCollection(data, nameCollection) {
 
     const content = document.getElementById("content");
+    const collectionId = normalise(nameCollection).replace(/\s/, '_')
 
     /*create the collection*/
         let container = document.createElement("div");
-        container.setAttribute("id", nameCollection);
+        container.setAttribute("id", collectionId);
 
         let titleList = document.createElement("div");
         titleList.classList.add("title-carousel");
@@ -17,7 +18,7 @@ export default function appendCollection(data, nameCollection) {
         let link = document.createTextNode("Ver tudo");
         linkList.appendChild(link);
 
-        linkList.href = "http://link:"+nameCollection;
+        linkList.href = "http://link:"+collectionId;
 
         let collection = document.createElement("div");
         collection.classList.add("owl-carousel");
@@ -33,7 +34,8 @@ export default function appendCollection(data, nameCollection) {
         data.forEach(element => {
             let item = document.createElement("div");
             item.classList.add("item");
-            item.setAttribute("id",element.id);
+            item.setAttribute("key",element.id);
+            item.setAttribute("id", collectionId.concat('_', element.id));
             item.setAttribute("name", element.name);
             item.setAttribute("onmouseover", "mouseOver(this)");
         
@@ -57,7 +59,13 @@ export default function appendCollection(data, nameCollection) {
     });
 }
 
-/*
-
-
-*/
+const normalise = text => {
+    text = text.toLowerCase();                                                         
+    text = text.replace(new RegExp('[ÁÀÂÃ]','gi'), 'a');
+    text = text.replace(new RegExp('[ÉÈÊ]','gi'), 'e');
+    text = text.replace(new RegExp('[ÍÌÎ]','gi'), 'i');
+    text = text.replace(new RegExp('[ÓÒÔÕ]','gi'), 'o');
+    text = text.replace(new RegExp('[ÚÙÛ]','gi'), 'u');
+    text = text.replace(new RegExp('[Ç]','gi'), 'c');
+    return text;                 
+}

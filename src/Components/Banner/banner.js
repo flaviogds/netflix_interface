@@ -1,5 +1,5 @@
 /*Creating and attaching featured to the DOM*/
-export default function appendFeatured(item){
+export function buildBanner(item){
     let banner = document.getElementById("featured-banner");
     banner.style.background = `url("https://image.tmdb.org/t/p/w1280/${item.sm_banner}")`;
     banner.style.backgroundRepeat = 'no-repeat'
