@@ -6,7 +6,7 @@ export function buildBanner(item){
     banner.style.backgroundSize = "100% 100%"
 
     document.getElementById("featured-title").innerHTML = item.original_name;
-    document.getElementById("featured-description").innerHTML = item.description;
+    document.getElementById("featured-description").innerHTML = item.description.split('.')[0];
     document.getElementById("featured-control").style.display = "flex";
     document.getElementById("play").setAttribute("onclick", "onPlay(this.id)")
     document.getElementById("play").setAttribute("id", item.id)

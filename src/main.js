@@ -65,10 +65,10 @@ function dataConstructor (data, media){
 function buildCollections (input){
     db.getData().forEach(item => {
         if(item.name === "Minha Lista"){
-            input.rating > 8 && item.collection.push(input);
+            input.rating > 8.5 && item.collection.push(input);
         }
         if(item.name === "Destaques"){
-            input.rating >= 7.5 && item.collection.push(input);
+            input.rating >= 8 && item.collection.push(input);
         }
         if(item.name === "Banner"){
             if(input.rating >> item.banner && input.description){
@@ -84,3 +84,4 @@ function buildCollections (input){
         }
     });
 }
+

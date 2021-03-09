@@ -101,6 +101,12 @@ body, html {
     padding: 20px;
     text-decoration: none;
 }
+
+.dropdown-list img{
+    width: 35px;
+    height: 35px;
+}
+
 .dropdown-list a:hover {
     background-color: rgba(50, 50, 50, 0.2);
 }
@@ -246,6 +252,10 @@ body, html {
     0%   {left: 0px;}
     100% {left: 10px;}
 }
+.item{
+    position: relative;
+    display: inline-block;
+}
 .item img {
     border-radius: 3px;
 }
@@ -283,6 +293,13 @@ body, html {
     border-radius: 5px;
     background: var(--black-palette);
     box-shadow: 10px 10px 10px rgba(14, 14, 14, 0.8);
+    animation-name: modal;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+}
+@keyframes modal {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
 }
 .modal-card img{
     width: 100%;

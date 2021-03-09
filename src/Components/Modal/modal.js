@@ -4,23 +4,28 @@ function mouseLeave(input){
 
 function mouseOver(input){
 
+    const container = document.getElementById("modal-card")
+
+    container.childNodes[0] !== undefined && mouseLeave(container.childNodes[0])
+
     const card = input.cloneNode(true);
+    const key = card.getAttribute("key");
 
-    card.removeAttribute("onmouseover")
+    card.removeAttribute("onmouseover");
 
-    const coordinates = document.getElementById(card.id).getBoundingClientRect();
+    const cardParams = document.getElementById(card.id).getBoundingClientRect();
 
-    const coordX = coordinates.left+(coordinates.width-345)/2
-
-    const coordY = coordinates.top
-
-    console.log(coordY)
+    const coordinates = {
+        x: cardParams.left+(cardParams.width-345)/2,
+        y: event.pageY - cardParams.height/2
+    }
 
     let modal_card = document.createElement("div");
     modal_card.setAttribute("onmouseleave", "mouseLeave(this)");
+    modal_card.setAttribute("id", `modal_${key}`);
     modal_card.classList.add("modal-card");
-    modal_card.style.left = `${coordX}px`;
-    modal_card.style.top = `${coordY}px`;
+    modal_card.style.left = `${coordinates.x}px`;
+    modal_card.style.top = `${coordinates.y}px`;
     
     let control = document.createElement("div");
     control.classList.add("control-modal-card");
@@ -33,7 +38,7 @@ function mouseOver(input){
     button_wrapper.classList.add("button-wrapper");
 
     let btn_play = document.createElement("button");
-    btn_play.setAttribute("onclick", `onPlay(${card.key})`);
+    btn_play.setAttribute("onclick", `onPlay(${key})`);
     btn_play.classList.add("control-play");
     btn_play.innerHTML = "<i class='fas fa-play'></i>";
 
@@ -47,7 +52,7 @@ function mouseOver(input){
     btn_deslike.innerHTML = "<i class='far fa-thumbs-down'></i>";
 
     let btn_moreInfo = document.createElement("button");
-    btn_moreInfo.setAttribute("onclick", `onInfo(${card.key})`);
+    btn_moreInfo.setAttribute("onclick", `onInfo(${key})`);
     btn_moreInfo.classList.add("control-moreInfo");
     btn_moreInfo.innerHTML = "<i class='fas fa-chevron-down'></i>";
     
@@ -61,7 +66,8 @@ function mouseOver(input){
     button_wrapper.appendChild(btn_deslike);
     button_wrapper.appendChild(btn_moreInfo);
 
-    document.getElementById(card.id).appendChild(modal_card)
-
+    document.getElementById('modal-card').appendChild(modal_card)
 }
 
+function onPlay(input){ }
+function onInfo(input){ }
